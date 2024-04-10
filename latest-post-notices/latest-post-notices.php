@@ -7,7 +7,7 @@
 * Description: A test project for potential position
 * Author:      Juls Terobas
 * Plugin Type: Extension
-* Author URI: https://maennche.com/
+* Author URI: 
 * Version: 1.0.0
 * Text Domain: latest-post-notification
 * License:     GPLv3
