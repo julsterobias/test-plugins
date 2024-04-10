@@ -39,6 +39,14 @@ function lpn_load_text_domain() {
 	load_plugin_textdomain( 'latest-post-notices', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 }
 
+
+/**
+ * 
+ * lpn_activate_plugin
+ * trigger code during activation
+ * @since 1.0.0
+ * 
+ */
 register_activation_hook( __FILE__, 'lpn_activate_plugin' );
 
 if (!function_exists('lpn_activate_plugin')) {
@@ -48,7 +56,13 @@ if (!function_exists('lpn_activate_plugin')) {
 	}
 }
 
-
+/**
+ * 
+ * lpn_deactivate_plugin
+ * trigger code during deactivation
+ * @since 1.0.0
+ * 
+ */
 register_deactivation_hook( __FILE__, 'lpn_deactivate_plugin' );
 
 if (!function_exists('lpn_deactivate_plugin')) {
@@ -63,13 +77,11 @@ if (!function_exists('lpn_deactivate_plugin')) {
 /**
 *
 *
-* @since 1.0.11
+* @since 1.0.0
 * restructure folder added public, common and public
 *
 *
 */
-
-
 spl_autoload_register(function ($class) {
     if(strpos($class,'lpn') !== false){
         $class = preg_replace('/\\\\/', '{lpn}', $class);
@@ -92,6 +104,13 @@ spl_autoload_register(function ($class) {
     }
 });
 
+/**
+ * 
+ * lpn_plugin_loaded
+ * load plugin hook
+ * @since 1.0.0
+ * 
+ */
 add_action('plugins_loaded', 'lpn_plugin_loaded');
 function lpn_plugin_loaded(){
     //initialize main class here

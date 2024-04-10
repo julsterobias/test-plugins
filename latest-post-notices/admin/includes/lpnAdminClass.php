@@ -26,10 +26,36 @@ if ( !function_exists( 'add_filter' ) ){
 
 class lpnAdminClass extends lpnUtils {
 
-    private int $max_post = 2;
+    /**
+     * 
+     * 
+     * int
+     * Maximum number of post to pull
+     * @since 1.0.0
+     * 
+     * 
+     */
+    private int $max_post = 10;
 
+    /**
+     * 
+     * 
+     * array
+     * target post type to retrieve
+     * @since 1.0.0
+     * 
+     * 
+     */
     private array $post_types = ['post'];
     
+    /**
+     * 
+     * 
+     * constructor
+     * @since 1.0.0
+     * 
+     * 
+     */
     public function __construct()
     {
         //load assets
@@ -40,11 +66,30 @@ class lpnAdminClass extends lpnUtils {
 
     }
 
+    /**
+     * 
+     * 
+     * load css assets
+     * @since 1.0.0
+     * @param
+     * @return
+     * 
+     */
     public function load_assets()
     {
         wp_enqueue_style( 'lpn-admin-css', LPN_PLUGIN_URL . 'admin/assets/lpn.css', false, '1.0.0' );
     }
 
+    /**
+     * 
+     * 
+     * get posts
+     * @since 1.0.0
+     * @param
+     * @return
+     * 
+     * 
+     */
     public function get_latest_posts() {
 
         $posts = [
@@ -59,6 +104,16 @@ class lpnAdminClass extends lpnUtils {
 
     }
 
+    /**
+     * 
+     * 
+     * show the notice in admin
+     * @since 1.0.0
+     * @param
+     * @return
+     * 
+     * 
+     */
     public function show_notice()
     {
         $posts = $this->get_latest_posts();
