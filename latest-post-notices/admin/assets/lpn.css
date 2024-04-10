@@ -1,0 +1,23 @@
+.lpn-notices {
+    padding: 15px;
+    border-radius: 5px;
+    padding-bottom: 0;
+}
+
+.lpn-notices h3 {
+    margin: 0;
+}
+
+.lpn-notices a {
+    border-bottom: 0;
+    text-decoration: none;
+}
+
+.lpn-notices li {
+    padding: 5px 0;
+    border-bottom: 1px solid #CCC;
+}
+
+.lpn-notices li:last-child {
+    border-bottom: 0;
+}
